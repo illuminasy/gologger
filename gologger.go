@@ -38,10 +38,9 @@ func Warn(err error, a ...interface{}) {
 // Error Logs an Error
 func Error(err error, a ...interface{}) {
 	logLevel("ERROR", err.Error(), a...)
-	// append error class so bugsnag can group errors using this
 
 	if loggerConfig.Bugsnag {
-		fmt.Println(getErrorClass(err))
+		// append error class so bugsnag can group errors using this
 		a = append([]interface{}{bugsnag.ErrorClass{getErrorClass(err)}}, a...)
 		err = bugsnag.Notify(err, a...)
 
