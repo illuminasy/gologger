@@ -5,12 +5,9 @@ import (
 	"log"
 	"runtime/debug"
 	"strings"
-
-	bugsnag "github.com/bugsnag/bugsnag-go"
 )
 
 // Config Go logger config struct
-// Bugsnag true/false - turn on or off logging to bugsnag
 // CustomErrorClass mapping errors to string, used in bugsnag to group by
 // Requires manually setting group classes in bugsnag website
 type Config struct {
@@ -37,17 +34,12 @@ func Warn(err error, a ...interface{}) {
 
 // Error Logs an Error
 func Error(err error, a ...interface{}) {
-	logLevel("ERROR", err.Error(), a...)
+	logWithMiddleware("ERROR", err, a...)
+}
 
-	if loggerConfig.Bugsnag {
-		// append error class so bugsnag can group errors using this
-		a = append([]interface{}{bugsnag.ErrorClass{getErrorClass(err)}}, a...)
-		err = bugsnag.Notify(err, a...)
-
-		if err != nil {
-			log.Panicln(err)
-		}
-	}
+// Fatal Logs an Fatal
+func Fatal(err error, a ...interface{}) {
+	logWithMiddleware("FATAL", err, a...)
 }
 
 // WarnIfErr Warn only if there is an error
@@ -73,11 +65,19 @@ func Wrap(err1 error, err2 error) error {
 	return fmt.Errorf("%v: %v", err2, err1)
 }
 
+func logWithMiddleware(level string, err error, a ...interface{}) {
+	logLevel(level, err.Error(), a...)
+
+	if loggerConfig.Bugsnag {
+		sendErrorToBugsnag(err)
+	}
+}
+
 func logLevel(logLevel string, message interface{}, a ...interface{}) {
 	stringMessage := fmt.Sprintf(interfaceToString(message), a...)
 
 	// Add a stack trace if it is an error
-	if logLevel == "ERROR" {
+	if logLevel == "ERROR" || logLevel == "FATAL" {
 		stringMessage += "\nStacktrace:\n" + string(debug.Stack())
 	}
 

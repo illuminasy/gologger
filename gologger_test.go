@@ -57,7 +57,6 @@ func TestError(t *testing.T) {
 func ExampleWrap_output() {
 	errTest = errors.New("test error class")
 	lc := Config{
-		Bugsnag: false,
 		CustomErrorClass: map[string]error{
 			"ErrTest": errTest,
 		},
@@ -71,7 +70,6 @@ func ExampleWrap_output() {
 
 func TestErrorWrap(t *testing.T) {
 	lc := Config{
-		Bugsnag:          true,
 		CustomErrorClass: customErrors,
 	}
 	Configure(lc)
@@ -83,7 +81,6 @@ func TestErrorWrap(t *testing.T) {
 
 func TestGetErrorClass(t *testing.T) {
 	lc := Config{
-		Bugsnag:          false,
 		CustomErrorClass: customErrors,
 	}
 	Configure(lc)
