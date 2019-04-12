@@ -1,3 +1,7 @@
+## 0.1.4 (April 12, 2019)
+  - Use middleware to report errors to bugsnag
+  - Added a default fallback to use local bugsnag.
+
 ## 0.1.3 (April 10, 2019)
 
 
