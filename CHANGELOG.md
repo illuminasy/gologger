@@ -1,3 +1,6 @@
+## 0.1.9 (April 14, 2019)
+  - Fixed coveralls secret
+
 ## 0.1.8 (April 13, 2019)
   - Fixed README.md
 
