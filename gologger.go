@@ -34,12 +34,12 @@ func Warn(err error, a ...interface{}) {
 
 // Error Logs an Error
 func Error(err error, a ...interface{}) {
-	logWithMiddleware("ERROR", err, a...)
+	logLevel("ERROR", err.Error(), a...)
 }
 
 // Fatal Logs an Fatal
 func Fatal(err error, a ...interface{}) {
-	logWithMiddleware("FATAL", err, a...)
+	logLevel("FATAL", err.Error(), a...)
 }
 
 // WarnIfErr Warn only if there is an error
@@ -65,14 +65,6 @@ func Wrap(err1 error, err2 error) error {
 	return fmt.Errorf("%v: %v", err2, err1)
 }
 
-func logWithMiddleware(level string, err error, a ...interface{}) {
-	logLevel(level, err.Error(), a...)
-
-	if loggerConfig.Bugsnag {
-		sendErrorToBugsnag(err)
-	}
-}
-
 func logLevel(logLevel string, message interface{}, a ...interface{}) {
 	stringMessage := fmt.Sprintf(interfaceToString(message), a...)
 
@@ -82,6 +74,10 @@ func logLevel(logLevel string, message interface{}, a ...interface{}) {
 	}
 
 	log.Printf("[%s] %s", logLevel, stringMessage)
+
+	if (logLevel == "ERROR" || logLevel == "FATAL") && loggerConfig.Bugsnag {
+		sendErrorToBugsnag(fmt.Errorf(stringMessage))
+	}
 }
 
 func interfaceToString(message interface{}) string {
