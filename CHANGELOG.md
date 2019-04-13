@@ -1,3 +1,6 @@
+## 0.1.6 (April 13, 2019)
+  - Added code coverage badge to README.md
+
 ## 0.1.5 (April 13, 2019)
   - Fixed README.md
   - Fixed travis.yml

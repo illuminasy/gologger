@@ -1,4 +1,4 @@
-# GOLogger [![Build Status](https://travis-ci.org/illuminasy/gologger.svg?branch=master)](https://travis-ci.org/illuminasy/gologger) [![GoDoc](https://godoc.org/github.com/illuminasy/gologger?status.svg)](https://godoc.org/github.com/illuminasy/gologger) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/illuminasy/gologger/blob/master/LICENSE.md)
+# GOLogger [![Build Status](https://travis-ci.org/illuminasy/gologger.svg?branch=master)](https://travis-ci.org/illuminasy/gologger) [![Coverage Status](https://coveralls.io/repos/github/illuminasy/gologger/badge.svg?branch=master)](https://coveralls.io/github/illuminasy/gologger?branch=master) [![GoDoc](https://godoc.org/github.com/illuminasy/gologger?status.svg)](https://godoc.org/github.com/illuminasy/gologger) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/illuminasy/gologger/blob/master/LICENSE.md)
 
 GOLogger
 A Simple logging package, prefixes logging level.
