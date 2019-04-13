@@ -1,3 +1,6 @@
+## 0.1.7 (April 13, 2019)
+  - Fixed coveralls secret
+
 ## 0.1.6 (April 13, 2019)
   - Added code coverage badge to README.md
 
