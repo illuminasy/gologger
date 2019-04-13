@@ -20,6 +20,8 @@ github.com/illuminasy/gorouter v0.1.13 h1:3G9fHvMiJfoaXEjxtgu/ZtfcPtwc34wmSDFc6o
 github.com/illuminasy/gorouter v0.1.13/go.mod h1:Tg6EXkRDVAj0eJYZkAOvEYUA/F4brDwzlfEelMfoZHY=
 github.com/illuminasy/gorouter v0.1.25 h1:RAYHP/Uxv2cmSzXEmfnOUexWSRrh87bKTPU8i3cmWkM=
 github.com/illuminasy/gorouter v0.1.25/go.mod h1:Tg6EXkRDVAj0eJYZkAOvEYUA/F4brDwzlfEelMfoZHY=
+github.com/illuminasy/gorouter v0.1.26 h1:0lvaO1k27fGo/NyJ7nhrQV8JDfLvjcIZODU59Jj4m+o=
+github.com/illuminasy/gorouter v0.1.26/go.mod h1:Tg6EXkRDVAj0eJYZkAOvEYUA/F4brDwzlfEelMfoZHY=
 github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+9HbQbYf7g=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 h1:iQTw/8FWTuc7uiaSepXwyf3o52HaUYcV+Tu66S3F5GA=
