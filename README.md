@@ -23,11 +23,11 @@ func startApp() {
 
 With Bugsnag
 There are 2 ways to use this package with bugsnag
-1) With out gorouter package, which has a middleware which does error reporting to external service
+1) With gorouter package, which has a middleware which does error reporting to external service
 checkout https://github.com/illuminasy/gorouter for more info and configuration. No need to reconfigure bugsnag here
 2) With out gorouter package, you will need to configure bugsnag here to make it work
 
-1) With out gorouter package
+1) With gorouter package
 ```go
 func startApp() {
 	errTest = errors.New("test error class")
@@ -46,7 +46,7 @@ func startApp() {
 
 ```
 
-2) With out gorouter package
+2) Without gorouter package
 ```go
 func startApp() {
 	bc := gologger.BugsnagConfig {
