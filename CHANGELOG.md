@@ -1,3 +1,6 @@
+## 0.1.11 (April 14, 2019)
+  - Fixed coveralls secret
+
 ## 0.1.10 (April 14, 2019)
   - Fixed coveralls secret
 
