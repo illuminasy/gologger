@@ -1,3 +1,7 @@
+## 0.2.0 (September 22, 2022)
+  - Upgraded packages
+  - updated go version to v1.19
+
 ## 0.1.11 (April 14, 2019)
   - Fixed coveralls secret
 
